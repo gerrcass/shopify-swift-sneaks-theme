@@ -7,11 +7,12 @@
     <title>Swift Sneaks</title>
 
     {{ content_for_header }}
+    {{ 'style.css' | | asset_url | | stylesheet_tag }}
 
   </head>
-  <body class="gradient">
+  <body>
 
-    <main class="bg-lime-500">
+    <main class="grid place-items-center min-h-screen bg-lime-500">
       {{ content_for_layout }}
     </main>
 
