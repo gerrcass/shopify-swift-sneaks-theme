@@ -1,0 +1,15 @@
+{
+  "name": "shopify-swift-sneaks-theme",
+  "version": "1.0.0",
+  "description": "Demo theme for Shopify store specializing in premium footwear.",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
+  }
+}
