@@ -1,5 +1,9 @@
 {
     "general": {
+        "404": {
+            "title": "404",
+            "subtext_html": "La página que estabas buscando no existe"
+        },
         "add_to_cart": "Agregar al Carrito"
     }
 }

@@ -1,5 +1,9 @@
 {
     "general": {
+        "404": {
+            "title": "404",
+            "subtext_html": "The page you were looking for doesn't exist"
+        },
         "add_to_cart": "Add to Card"
     }
 }

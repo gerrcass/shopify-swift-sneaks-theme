@@ -1,0 +1,57 @@
+<header class="theme-bg sticky top-0 py-6 z-10 bg-white shadow-lg">
+  <div class="w-full max-w-5xl mx-auto px-4 flex justify-between items-center">
+    <h1 class="text-lg font-bold text-gray-500">{{ shop.name }}</h1>
+
+    {% if section.settings.show_search %}    
+        <form action="/search" class="border">
+            <input type="search" name="q">
+            <button type="submit" class="bg-gray-600 text-white px-4">Search</button>
+        </form>
+    {% endif %}
+
+    <ul class="flex gap-2">
+      {% for link in linklists.main-menu.links %}
+        <li>
+          {{ link.title | link_to: link.url }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+
+<style>
+    .theme-bg{
+        background-color: {{section.settings.bg}}; /*👈 Solo se permite este tipo de variables en la etiqueta style tradicional */
+    }
+</style>
+
+
+{% stylesheet %}
+    .test{
+        padding: 20px; /* Tag stylesheet inyecta el código dentro de 'content_for_header' en theme.liquid*/
+    }
+{% endstylesheet %}
+
+{% javascript %}
+    console.log('👋Hello from header section!') // Tag javascript también inyecta código dentro de 'content_for_header' en theme.liquid
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show search form?",
+        "default": true
+      }, 
+      {
+        "type": "color",
+        "id": "bg",
+        "label": "Background color",
+        "default": "#ffffff"
+      }
+    ]
+  }
+{% endschema %}
