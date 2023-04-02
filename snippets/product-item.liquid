@@ -1,0 +1,8 @@
+<a href={{product.url}} class="mx-auto px-6 py-4 w-full bg-white rounded-lg overflow-hidden text-sm">
+  <img
+    class="mx-auto"
+    src={{ product.featured_image | image_url: width: 100 }}
+    alt="Product image">
+  <h3 class="mt-4 truncate">{{ product.title }}</h3>
+  <p>{{ product.price | money }}</p>
+</a>

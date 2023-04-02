@@ -1,0 +1,11 @@
+<h1>{{ blog.title }}</h1>
+👀BLOG?
+{% for articles in blog.articles %}
+  <div class="">
+    <a href="{{article.url}}">
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.author }}</p>
+      <p>{{ article.excerpt }}</p>
+    </a>
+  </div>
+{% endfor %}

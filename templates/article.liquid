@@ -1,0 +1,50 @@
+<div class="w-full">
+  <img
+    class="w-full object-cover h-44 md:h-96"
+    srcset={{article.image | image_url }}
+    alt={{article.image.alt}}>
+</div>
+<div class="max-w-3xl mx-auto">
+  <h1 class="text-3xl font-bold">{{ article.title }}</h1>
+  <p class="text-center">{{ article.published_at | date: '%B %d %Y' }}</p>
+  <div class="text-justify">
+    {{ article.content }}
+  </div>
+  {% if article.comments_enabled? %}
+    <h2 class="mt-4">Leave a comment</h2>
+
+    {% for cmt in article.comments %}
+      <div class="">
+        <h3>{{ cmt.name }}</h3>
+        <p>{{ cmt.email }}</p>
+        <p>{{ cmt.content }}</p>
+      </div>
+    {% endfor %}
+
+    {% form 'new_comment', article %}
+      {{ form.errors | default_errors }}
+      <div class="flex gap-2">
+        <div class="name">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="comment[author]"
+            value="{{form.author}}">
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="comment[email]"
+            value="{{form.email}}">
+        </div>
+      </div>
+      <div class="comment mt-4">
+        <label for="comment">Comment</label>
+        <textarea class="w-full" name="comment[body]">{{ form.body }}</textarea>
+      </div>
+      <button type="submit">Add comment</button>
+
+    {% endform %}
+  {% endif %}
+</div>
