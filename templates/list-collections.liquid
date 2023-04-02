@@ -1,0 +1,15 @@
+{% paginate collections by 5 %}
+  <section class="max-w-3xl mx-auto text-center py-12">
+    <h1 class="text-3xl pb-6">Collections</h1>
+    {% for collection in collections %}
+      <a class="flex justify-center gap-2" href="{{collection.url}}">
+        <h2>{{ collection.title }}</h2>
+        <p>({{ collection.all_products_count }})</p>
+      </a>
+    {% endfor %}
+    <div class="mt-4">
+      {{ paginate | default_pagination }}
+    </div>
+  </section>
+
+{% endpaginate %}
