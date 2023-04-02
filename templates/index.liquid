@@ -1,1 +1,15 @@
-<h1 class="text-gray-700 font-bold text-7xl text-center">Hello World!</h1>
+<div class="max-w-3xl mx-auto px-4 py-10">
+  <h2 class="text-center pb-4">{{ collections['men'].title }}</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-6">
+    {% for product in collections['men'].products %}
+      <a href={{product.url}} class="mx-auto px-6 py-4 w-full bg-white rounded-lg overflow-hidden text-sm">
+        <img
+          class="mx-auto"
+          src={{ product.featured_image | image_url: width: 100 }}
+          alt="Product image">
+        <h3 class="mt-4 truncate">{{ product.title }}</h3>
+        <p>{{ product.price | money }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</div>

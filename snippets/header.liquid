@@ -1,0 +1,12 @@
+<header class="sticky top-0 py-6 z-10 bg-white shadow-lg">
+  <div class="w-full max-w-5xl mx-auto px-4 flex justify-between items-center">
+    <h1 class="text-lg font-bold text-gray-500">{{ shop.name }}</h1>
+    <ul class="flex gap-2">
+      {% for link in linklists.main-menu.links %}
+        <li>
+          {{ link.title | link_to: link.url }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>

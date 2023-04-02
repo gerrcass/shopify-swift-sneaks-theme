@@ -11,10 +11,11 @@
 
   </head>
   <body>
-
-    <main class="grid place-items-center min-h-screen bg-lime-500">
+    {% render 'header' %}
+    <main class="bg-gray-200">
       {{ content_for_layout }}
     </main>
+    {{ 'script.js' | | asset_url | | | script_tag }}
 
   </body>
 </html>
