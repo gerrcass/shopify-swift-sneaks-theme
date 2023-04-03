@@ -1,8 +1,0 @@
-<div class="max-w-3xl mx-auto px-4 py-10">
-  <h2 class="text-center pb-4">{{ collections['men'].title }}</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-6">
-    {% for product in collections['men'].products %}
-      {% render 'product-item', product: product %}
-    {% endfor %}
-  </div>
-</div>

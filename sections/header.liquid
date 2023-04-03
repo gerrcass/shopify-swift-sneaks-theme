@@ -3,7 +3,7 @@
     <h1 class="text-lg font-bold text-gray-500">{{ shop.name }}</h1>
 
     {% if section.settings.show_search %}    
-        <form action="/search" class="border">
+        <form action="/search" class="border hidden md:block">
             <input type="search" name="q">
             <button type="submit" class="bg-gray-600 text-white px-4">Search</button>
         </form>

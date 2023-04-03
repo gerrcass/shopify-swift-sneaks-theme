@@ -1,6 +1,6 @@
 {% paginate collection.products by 5 %}
-  <div class="max-w-3xl mx-auto">
-    <h1>{{ collection.title }}</h1>
+  <div class="max-w-3xl mx-auto mt-4 text-center">
+    <h1 class="text-3xl font-medium">{{ collection.title }}</h1>
 
     <select id="sort-by">
         {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
@@ -11,12 +11,14 @@
           </option>
         {% endfor %}
       </select>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3">
 
-    {% for product in collection.products %}
-      {% render 'product-item', product: product %}
-    {% endfor %}
-    <div class="my-4 text-center">
-
+  {% for product in collection.products %}
+    {% render 'product-item', product: product %}
+  {% endfor %}
+  </div>
+  <div class="my-4 text-center">
+    
       {{ paginate | default_pagination }}
     </div>
   </div>

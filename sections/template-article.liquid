@@ -44,7 +44,7 @@
       </div>
       {% when 'article_content' %}
       <div class="flex items-center justify-center">
-        <div class="max-w-4xl px-4">
+        <div class="max-w-4xl px-4 space-y-3">
           <p itemprop="articleBody">{{ article.content }}</p>
         </div>
       </div>
@@ -61,7 +61,8 @@
     {% if article.comments_count > 0 %}
 
       {% else %}
-        There's no comments
+        <p class="max-w-4xl px-4 mx-auto text-center text-gray-500 text-sm">There's no comments!</p>
+
 
     {% endif %}
 
@@ -118,8 +119,8 @@
 <script type="application/ld+json">
   {
   "@context": "http://schema.org",
-      "@type":"BlogPosting",
-      "headline": {{ article.title | json }},
+                                        "@type":"BlogPosting",
+                                        "headline": {{ article.title | json }},
   "articleBody": {{ article.content | strip_html | json }},
   {% if article.excerpt != blank %}
     "description": {{ article.excerpt | strip_html | json }},
@@ -132,12 +133,12 @@
   "datePublished": {{ article.published_at | date: format: "default" | json }},
   "dateCreated": {{ article.created_at | date: format: "default" | json }},
   "author": {
-        "@type": "Person",
-        "name": {{ article.author | json }}
+                                          "@type": "Person",
+                                          "name": {{ article.author | json }}
   },
   "publisher":{
-        "@type": "Organization",
-        "name": {{ shop.name | json }}
+                                          "@type": "Organization",
+                                          "name": {{ shop.name | json }}
   }
   }
 </script>
