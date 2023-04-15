@@ -4,7 +4,7 @@
   "description": "Demo theme for Shopify store specializing in premium footwear.",
   "main": "index.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./assets/style.css.liquid --watch"
+    "tw": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css.liquid --watch"
   },
   "keywords": [],
   "author": "",

@@ -11,7 +11,7 @@
                 },
                 "checkout-button": {
                     "type": "checkout_button"
-                },
+                }
             },
             "block_order": [
                 "subtotal",
